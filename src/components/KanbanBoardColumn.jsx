@@ -3,7 +3,7 @@ import KanbanBoardItem from "./KanbanBoardItem"
 import interact from "interactjs"
 
 function dropHandler(event) {
-	console.log(event)
+	// console.log(event)
 }
 
 function KanbanBoardColumn(props) {
@@ -16,24 +16,23 @@ function KanbanBoardColumn(props) {
 	// 	ondrop: dropHandler
 	// })
 
-	React.useEffect(() => {
-		if (dropRef.current) {
-			interact(dropRef.current)
-				.dropzone({
-					accept: '.kanban-item',
-					ondrop: function (event) {
-						console.log('event', event)
-						const columnEl = event.currentTarget
-						const itemEl = event.relatedTarget
-						columnEl.append(itemEl)
-					},
-				})
-				.on("dropactivate", function (event) {
-					// console.log('aaaa')
-					event.target.classList.add("drop-activated")
-				})
-		}
-	}, [props])
+	// React.useEffect(() => {
+	// 	if (dropRef.current) {
+	// 		interact(dropRef.current)
+	// 			.dropzone({
+	// 				accept: '.kanban-item',
+	// 				ondrop: function (event) {
+	// 					console.log(event)
+	// 					const columnEl = event.currentTarget
+	// 					const itemEl = event.relatedTarget
+	// 					columnEl.append(itemEl)
+	// 				},
+	// 			})
+	// 			.on("dropactivate", function (event) {
+	// 				event.target.classList.add("drop-activated")
+	// 			})
+	// 	}
+	// }, [props])
 
 	return (
 		<div className="p-2">

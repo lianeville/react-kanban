@@ -44,3 +44,7 @@ export function getContrastColor(bgColor) {
 	// Return either "black" or "white" depending on the relative luminance
 	return luminance > 0.5 ? "black" : "white"
 }
+
+export function insertAfter(referenceNode, newNode) {
+	referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
